@@ -4,12 +4,14 @@
       <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
       <v-toolbar-title>MedFácil</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-btn icon @click="exitApp">
-        <v-icon>account_circle</v-icon>
-      </v-btn>
-      <v-btn icon @click="exitApp">
-        <v-icon>exit_to_app</v-icon>
-      </v-btn>
+      <div v-if="connected">
+        <v-btn icon @click="exitApp">
+          <v-icon>account_circle</v-icon>
+        </v-btn>
+        <v-btn icon @click="exitApp">
+          <v-icon>exit_to_app</v-icon>
+        </v-btn>
+      </div>
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -26,6 +28,7 @@
 </template>
 
 <script>
+import EventBus from '@/event-bus'
 
 export default {
   name: 'App',
@@ -33,15 +36,20 @@ export default {
   },
   data () {
     return {
-      //
+      connected: false
     }
   },
   created() {
     this.$storage.set('login', { username: 'admin', password: '12345' })
+    
+    EventBus.$on('connected', payLoad => {
+      this.connected = payLoad
+    })
   },
   methods: {
     exitApp() {
-      this.$router.push('/');
+      this.$router.push('/')
+      EventBus.$emit('connected', false)
     }
   }
 }

@@ -41,5 +41,8 @@
 </script>
 
 <style>
-
+.headline {
+  position: absolute;
+  bottom: 0;
+}
 </style>

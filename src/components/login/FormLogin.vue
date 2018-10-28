@@ -28,23 +28,23 @@
 </template>
 
 <script>
-  export default {
-    data: () => ({
-      username: null,
-      password: null,
-      alert: false
-    }),
-    methods: {
-      login() {
-        const data = this.$storage.get('login');
-        if(this.username == data.username && this.password == data.password) {
-          this.$router.push('dashboard');
-        } else {
-          this.alert = true;
-        }
+export default {
+  data: () => ({
+    username: null,
+    password: null,
+    alert: false
+  }),
+  methods: {
+    login() {
+      const data = this.$storage.get('login');
+      if(this.username == data.username && this.password == data.password) {
+        this.$router.push('dashboard')
+      } else {
+        this.alert = true
       }
     }
   }
+}
 </script>
 
 <style>
