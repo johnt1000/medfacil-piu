@@ -13,7 +13,6 @@
         </v-btn>
       </div>
     </v-toolbar>
-    <v-navigation-drawer app></v-navigation-drawer>
     <v-content>
       <v-container fluid>
         <router-view/>
