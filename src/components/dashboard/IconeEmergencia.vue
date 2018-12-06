@@ -11,13 +11,13 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Emergências</div>
-            <span class="grey--text">Cadastre seus medicamentos</span>
+            <span class="grey--text">Cadastre contatos de emergências e tenha acesso rápido</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista</v-btn>
-          <v-btn flat color="purple">Novo Cadastro</v-btn>
+          <v-btn flat>Lista de contatos</v-btn>
+          <v-btn flat color="purple">Novo Contato</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +26,17 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Cadastre seus medicamentos de uso continuo ou transitório.
+            Deserunt et consequat excepteur officia
+            ullamco veniam nostrud voluptate ut
+            laborum cupidatat anim eu. Veniam nulla
+            pariatur Lorem anim. Ipsum eiusmod esse
+            aute elit proident proident non sunt
+            non ad non proident. Mollit nisi aute
+            culpa reprehenderit dolor cupidatat do
+            labore nulla tempor enim aliqua. Fugiat
+            et qui irure ex laborum do. Est dolor
+            eserunt mollit et laborum enim ipsum
+            esse anim mollit velit sint.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
