@@ -1,22 +1,32 @@
 <template>
   <div>
-    <IconeMedicamento></IconeMedicamento>
-    <GridIcons></GridIcons>
-    <GridIcons></GridIcons>
-    <GridIcons></GridIcons>
+    <icone-medicamento />
+    <icone-troca />
+    <icone-medico />
+    <icone-alarme />
+    <icone-avaliacao />
+    <icone-emergencia />
   </div>
 </template>
 
 <script>
-import GridIcons from '@/components/dashboard/GridIcons.vue'
 import IconeMedicamento from '@/components/dashboard/IconeMedicamento.vue'
+import IconeTroca from '@/components/dashboard/IconeTroca.vue'
+import IconeMedico from '@/components/dashboard/IconeMedicoClinica.vue'
+import IconeAlarme from '@/components/dashboard/IconeAlarme.vue'
+import IconeAvaliacao from '@/components/dashboard/IconeAvaliacao.vue'
+import IconeEmergencia from '@/components/dashboard/IconeEmergencia.vue'
 import EventBus from '@/event-bus'
 
 export default {
   name: 'dashboard',
   components: {
-    GridIcons,
-    IconeMedicamento
+    IconeMedicamento,
+    IconeTroca,
+    IconeMedico,
+    IconeAlarme,
+    IconeAvaliacao,
+    IconeEmergencia
   },
   created() {
     EventBus.$emit('connected', true)
