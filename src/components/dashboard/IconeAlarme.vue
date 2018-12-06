@@ -3,21 +3,21 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://conteudo.imguol.com.br/c/entretenimento/08/2017/11/29/remedios-medicamento-1511972729154_v2_615x300.jpg"
+          src="https://cdn.blog.psafe.com/blog/wp-content/uploads/2017/06/S12017-Project-4-Maintenance-BR-BLOG-PT-Perdeu-o-celular-veja-como-disparar-um-alarme-a-dist%C3%A2ncia-1.jpg"
           height="200px"
         >
         </v-img>
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Meus Medicamentos</div>
-            <span class="grey--text">Cadastre seus medicamentos</span>
+            <div class="headline">Alarme</div>
+            <span class="grey--text">Cadastre seus alarmes e não perca a hora do remédio</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista de Medicamentos</v-btn>
-          <v-btn flat color="purple">Novo Medicamento</v-btn>
+          <v-btn flat>Lista de alarmes</v-btn>
+          <v-btn flat color="purple">Novo Alarme</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,11 +26,11 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Adipisicing do in tempor elit in duis esse.
-            In esse reprehenderit ea eu. Amet magna incididunt
-            aliqua dolor anim mollit ex consequat magna
-            adipisicing tempor ipsum. Anim elit consequat nulla
-            aliqua aliqua irure elit labore dolore.
+            Tempor officia aliqua minim dolore id cupidatat consectetur laboris
+            nisi commodo et aliqua do incididunt. Sit magna consectetur non eu
+            dolor tempor. Aliqua eu amet elit commodo proident in nostrud. Quis
+            sit consequat occaecat do et deserunt mollit id id anim exercitation`
+            quis pariatur.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
