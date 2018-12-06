@@ -11,13 +11,13 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Médicos e Clínicas</div>
-            <span class="grey--text">Cadastre seus medicamentos</span>
+            <span class="grey--text">Ache médicos e clínicas para atendimento e agendamento.</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista</v-btn>
-          <v-btn flat color="purple">Novo Cadastro</v-btn>
+          <v-btn flat>Buscar médicos</v-btn>
+          <v-btn flat>Buscar clínicas</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +26,13 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Cadastre seus medicamentos de uso continuo ou transitório.
+            Cupidatat officia elit et eu. Id Lorem exercitation
+            elit adipisicing eiusmod est elit sit cillum est
+            cillum adipisicing labore. Nostrud fugiat non culpa
+            id cupidatat labore proident sit esse eu ex qui est.
+            Cupidatat proident Lorem cillum eiusmod. Amet pariatur
+            psum ut et amet id eu proident veniam dolor enim
+            exercitation ipsum.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
