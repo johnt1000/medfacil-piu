@@ -11,13 +11,12 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Avaliações</div>
-            <span class="grey--text">Cadastre seus medicamentos</span>
+            <span class="grey--text">Avalie os usuários da plataforma e ajuda o MedFácil a melhorar.</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista</v-btn>
-          <v-btn flat color="purple">Novo Cadastro</v-btn>
+          <v-btn flat>Lista de usuário</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +25,20 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Cadastre seus medicamentos de uso continuo ou transitório.
+            Velit anim mollit aliqua Lorem est.
+            Nulla est velit deserunt Lorem ea
+            pariatur incididunt nisi sunt labore
+            sit Lorem enim. Nisi sunt do irure
+            eiusmod id in non eiusmod occaecat
+            excepteur tempor et magna. Exercitation
+            nulla aliquip occaecat ex aliquip
+            voluptate aute voluptate magna ex ut
+            ullamco duis non. Occaecat tempor ut
+            commodo incididunt duis fugiat elit
+            culpa laboris. Laborum labore minim
+            velit veniam nostrud anim aliquip
+            occaecat eiusmod proident aliqua est
+            incididunt.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
