@@ -16,8 +16,8 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista</v-btn>
-          <v-btn flat color="purple">Novo Cadastro</v-btn>
+          <v-btn flat>Lista de Medicamentos</v-btn>
+          <v-btn flat color="purple">Novo Medicamento</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +26,11 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Cadastre seus medicamentos de uso continuo ou transitório.
+            Adipisicing do in tempor elit in duis esse.
+            In esse reprehenderit ea eu. Amet magna incididunt
+            aliqua dolor anim mollit ex consequat magna
+            adipisicing tempor ipsum. Anim elit consequat nulla
+            aliqua aliqua irure elit labore dolore.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
