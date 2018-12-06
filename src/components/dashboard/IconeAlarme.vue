@@ -11,13 +11,13 @@
         <v-card-title primary-title>
           <div>
             <div class="headline">Alarme</div>
-            <span class="grey--text">Cadastre seus medicamentos</span>
+            <span class="grey--text">Cadastre seus alarmes e não perca a hora do remédio</span>
           </div>
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista</v-btn>
-          <v-btn flat color="purple">Novo Cadastro</v-btn>
+          <v-btn flat>Lista de alarmes</v-btn>
+          <v-btn flat color="purple">Novo Alarme</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -26,7 +26,11 @@
 
         <v-slide-y-transition>
           <v-card-text v-show="show">
-            Cadastre seus medicamentos de uso continuo ou transitório.
+            Tempor officia aliqua minim dolore id cupidatat consectetur laboris
+            nisi commodo et aliqua do incididunt. Sit magna consectetur non eu
+            dolor tempor. Aliqua eu amet elit commodo proident in nostrud. Quis
+            sit consequat occaecat do et deserunt mollit id id anim exercitation`
+            quis pariatur.
           </v-card-text>
         </v-slide-y-transition>
       </v-card>
