@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          src="https://noticias.reclameaqui.com.br/uploads/2015/12/553788732.png"
           height="200px"
         >
         </v-img>

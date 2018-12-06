@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          src="https://meditacaotranscendental.com.br/wp-content/uploads/2018/05/me%CC%81dico-1255x640-1140x640.jpg"
           height="200px"
         >
         </v-img>

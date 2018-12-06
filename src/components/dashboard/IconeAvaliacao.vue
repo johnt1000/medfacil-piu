@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          src="https://blog.softwareavaliacao.com.br/wp-content/uploads/2017/05/0118-02.jpg"
           height="200px"
         >
         </v-img>

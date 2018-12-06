@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          src="https://cdn.blog.psafe.com/blog/wp-content/uploads/2017/06/S12017-Project-4-Maintenance-BR-BLOG-PT-Perdeu-o-celular-veja-como-disparar-um-alarme-a-dist%C3%A2ncia-1.jpg"
           height="200px"
         >
         </v-img>

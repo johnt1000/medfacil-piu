@@ -3,7 +3,7 @@
     <v-flex xs12>
       <v-card>
         <v-img
-          src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
+          src="https://conteudo.imguol.com.br/c/entretenimento/08/2017/11/29/remedios-medicamento-1511972729154_v2_615x300.jpg"
           height="200px"
         >
         </v-img>
