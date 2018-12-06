@@ -10,7 +10,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Alamer</div>
+            <div class="headline">Alarme</div>
             <span class="grey--text">Cadastre seus medicamentos</span>
           </div>
         </v-card-title>

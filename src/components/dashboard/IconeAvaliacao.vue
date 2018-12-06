@@ -10,7 +10,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Troca Solidária</div>
+            <div class="headline">Avaliações</div>
             <span class="grey--text">Cadastre seus medicamentos</span>
           </div>
         </v-card-title>
