@@ -16,8 +16,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Contatos</v-btn>
-          <v-btn flat color="purple">Novo Contato</v-btn>
+          <v-btn flat @click="list">SOS</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
@@ -48,7 +47,12 @@
   export default {
     data: () => ({
       show: false
-    })
+    }),
+    methods: {
+      list() {
+        this.$router.push('/sos')
+      }
+    }
   }
 </script>
 
