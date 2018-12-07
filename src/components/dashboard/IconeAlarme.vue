@@ -10,7 +10,7 @@
 
         <v-card-title primary-title>
           <div>
-            <div class="headline">Alarme</div>
+            <div class="headline">Alarmes</div>
             <span class="grey--text">Cadastre seus alarmes e não perca a hora do remédio</span>
           </div>
         </v-card-title>

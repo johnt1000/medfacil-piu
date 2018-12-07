@@ -16,7 +16,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista de Medicamentos</v-btn>
+          <v-btn flat>Medicamentos</v-btn>
           <v-btn flat color="purple">Novo Medicamento</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
