@@ -1,35 +1,89 @@
 <template>
-    <v-tabs
-        centered
-        color="blue"
-        dark
-        icons-and-text
-    >
-        <v-tabs-slider color="yellow"></v-tabs-slider>
-        
-        <v-tab href="#tab-1">
-            Procurando
-            <v-icon>search</v-icon>
-        </v-tab>
+    <div>
+        <v-tabs
+            centered
+            color="primary"
+            dark
+            icons-and-text
+        >
 
-        <v-tab href="#tab-2">
-            Doando
-            <v-icon>redeem</v-icon>
-        </v-tab>
+            <v-tabs-slider color="yellow"></v-tabs-slider>
+            
+            <v-tab href="#tab-1">
+                Procurando
+                <v-icon>search</v-icon>
+            </v-tab>
 
-        <v-tab-item id="tab-1">
-            <v-card flat>
-                <v-card-text>aaaa</v-card-text>
-            </v-card>
-        </v-tab-item>
+            <v-tab href="#tab-2">
+                Doando
+                <v-icon>redeem</v-icon>
+            </v-tab>
 
-        <v-tab-item id="tab-2">
-            <v-card flat>
-                <v-card-text>bbbb</v-card-text>
-            </v-card>
-        </v-tab-item>
+            <v-tab-item id="tab-1">
+                <v-card>
+                    <v-list three-line>
+                        <template v-for="(item, index) in items">
+                            <v-subheader
+                            v-if="item.header"
+                            :key="item.header"
+                            >
+                            {{ item.header }}
+                            </v-subheader>
 
-    </v-tabs>
+                            <v-divider
+                            v-else-if="item.divider"
+                            :inset="item.inset"
+                            :key="index"
+                            ></v-divider>
+
+                            <v-list-tile
+                            v-else
+                            :key="item.title"
+                            avatar
+                            @click=""
+                            >
+                            <v-list-tile-avatar>
+                                <img :src="item.avatar">
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
+                                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            </v-list-tile>
+                        </template>
+                        </v-list>
+                    </v-card>
+            </v-tab-item>
+
+            <v-tab-item id="tab-2">
+                <v-card flat>
+                    <v-card-text>bbxxxbbssssbb</v-card-text>
+                </v-card>
+            </v-tab-item>
+
+        </v-tabs>
+        <v-btn
+              color="primary"
+              dark
+              fixed
+              bottom
+              right
+              fab
+            >
+              <v-icon>add</v-icon>
+        </v-btn>
+        <v-btn
+              color="white"
+              fixed
+              bottom
+              left
+              fab
+              @click="goDashboard"
+            >
+              <v-icon>arrow_back</v-icon>
+        </v-btn>
+    </div>
 </template>
 
 <script>
