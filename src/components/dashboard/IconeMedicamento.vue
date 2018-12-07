@@ -17,7 +17,7 @@
 
         <v-card-actions>
           <v-btn flat>Medicamentos</v-btn>
-          <v-btn flat color="purple">Novo Medicamento</v-btn>
+          <v-btn flat color="purple">Registrar</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
             <v-icon>{{ show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
