@@ -66,8 +66,16 @@ export default {
 
     this.$storage.set('troca_procura',
       [
-        { nome: 'Abraxane', qtd: 10, usuarios: 10 },
-        { nome: 'Dacarbazina', qtd: 7, usuarios: 2 }
+        { nome: 'Abraxane', qtd: 10, tipo: "Cápsula", usuarios: 10 },
+        { nome: 'Dacarbazina', qtd: 7, tipo: "Líquido", usuarios: 2 }
+      ]
+    )
+
+    this.$storage.set('troca_doando',
+      [
+        { nome: 'Facyl M', qtd: 100, tipo: "Cápsula", usuarios: 1 },
+        { nome: 'Ulceronyl', qtd: 4, tipo: "Cápsula", usuarios: 24 },
+        { nome: 'Ecalta', qtd: 1, tipo: "Líquido", usuarios: 1 }
       ]
     )
     

@@ -22,49 +22,27 @@
             <v-tab-item id="tab-1">
                 <v-card flat>
                     <v-list two-line subheader>
-                            
+
                         <v-subheader>
                             Estou procurando...
                         </v-subheader>
                         
-                        <v-list-tile>
+                        <v-list-tile v-for="troca in trocaProcura" :key="troca">
 
                             <v-list-tile-avatar>
                                 <v-icon>local_hospital</v-icon>
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
-                                <v-list-tile-title>Nome: Viagra</v-list-tile-title>
-                                <v-list-tile-sub-title>Quantidade: 10 Unidades</v-list-tile-sub-title>
+                                <v-list-tile-title>Nome: {{ troca.nome }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    QTD: {{ troca.qtd }} Unidades ({{ troca.tipo }})
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
                             
                             <v-list-tile-action>
                                 <v-badge overlap>
-                                    <span slot="badge">0</span>
-                                    <v-icon color="grey lighten-1" large>
-                                        account_circle
-                                    </v-icon>
-                                </v-badge>
-                            </v-list-tile-action>
-
-                        </v-list-tile>
-
-                        <v-divider></v-divider>
-
-                        <v-list-tile>
-
-                            <v-list-tile-avatar>
-                                <v-icon>local_hospital</v-icon>
-                            </v-list-tile-avatar>
-
-                            <v-list-tile-content>
-                                <v-list-tile-title>Nome: Aspirina</v-list-tile-title>
-                                <v-list-tile-sub-title>Quantidade: 2 Unidades</v-list-tile-sub-title>
-                            </v-list-tile-content>
-                            
-                            <v-list-tile-action>
-                                <v-badge overlap>
-                                    <span slot="badge">3</span>
+                                    <span slot="badge">{{ troca.usuarios }}</span>
                                     <v-icon color="grey lighten-1" large>
                                         account_circle
                                     </v-icon>
@@ -85,44 +63,22 @@
                             Estou doando...
                         </v-subheader>
                         
-                        <v-list-tile>
+                        <v-list-tile v-for="troca in trocaDoando" :key="troca">
 
                             <v-list-tile-avatar>
                                 <v-icon>local_hospital</v-icon>
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
-                                <v-list-tile-title>Nome: Viagra</v-list-tile-title>
-                                <v-list-tile-sub-title>Quantidade: 10 Unidades</v-list-tile-sub-title>
+                                <v-list-tile-title>Nome: {{ troca.nome }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    QTD: {{ troca.qtd }} Unidades ({{ troca.tipo }})
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
                             
                             <v-list-tile-action>
                                 <v-badge overlap>
-                                    <span slot="badge">15</span>
-                                    <v-icon color="grey lighten-1" large>
-                                        account_circle
-                                    </v-icon>
-                                </v-badge>
-                            </v-list-tile-action>
-
-                        </v-list-tile>
-
-                        <v-divider></v-divider>
-
-                        <v-list-tile>
-
-                            <v-list-tile-avatar>
-                                <v-icon>local_hospital</v-icon>
-                            </v-list-tile-avatar>
-
-                            <v-list-tile-content>
-                                <v-list-tile-title>Nome: Aspirina</v-list-tile-title>
-                                <v-list-tile-sub-title>Quantidade: 2 Unidades</v-list-tile-sub-title>
-                            </v-list-tile-content>
-                            
-                            <v-list-tile-action>
-                                <v-badge overlap>
-                                    <span slot="badge">7</span>
+                                    <span slot="badge">{{ troca.usuarios }}</span>
                                     <v-icon color="grey lighten-1" large>
                                         account_circle
                                     </v-icon>
@@ -178,7 +134,7 @@
                             </v-flex>
                             <v-flex xs12 sm6>
                                 <v-autocomplete
-                                :items="this.tipos_medicamentos"
+                                :items="this.tiposMedicamentos"
                                 label="Tipo*"
                                 required
                                 ></v-autocomplete>
@@ -216,12 +172,16 @@ export default {
             dialog: false,
             items: [],
             medicamentos: [],
-            tipos_medicamentos: []
+            tiposMedicamentos: [],
+            trocaProcura: [],
+            trocaDoando: []
         }
     },
     created() {
         this.medicamentos = this.$storage.get('medicamentos')
-        this.tipos_medicamentos = this.$storage.get('tipos_medicamentos')
+        this.tiposMedicamentos = this.$storage.get('tipos_medicamentos')
+        this.trocaProcura = this.$storage.get('troca_procura')
+        this.trocaDoando = this.$storage.get('troca_doando')
     },
     methods: {
       goDashboard() {
