@@ -16,7 +16,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista de Trocas</v-btn>
+          <v-btn flat>Trocas</v-btn>
           <v-btn flat color="purple">Nova Troca</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">

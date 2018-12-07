@@ -16,7 +16,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Lista de contatos</v-btn>
+          <v-btn flat>Contatos</v-btn>
           <v-btn flat color="purple">Novo Contato</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
