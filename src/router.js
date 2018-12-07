@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
+import Troca from './views/Troca.vue'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/dashboard',
       name: 'dashboard',
       component: Dashboard
+    },
+    {
+      path: '/trocas',
+      name: 'trocas',
+      component: Troca
     }
   ]
 })
