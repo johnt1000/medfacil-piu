@@ -1,7 +1,7 @@
 <template>
   <div>
-    <icone-medicamento />
     <icone-troca />
+    <icone-medicamento />
     <icone-medico />
     <icone-alarme />
     <icone-avaliacao />

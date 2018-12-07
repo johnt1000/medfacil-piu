@@ -27,7 +27,7 @@
                             Estou procurando...
                         </v-subheader>
                         
-                        <v-list-tile v-for="troca in trocaProcura" :key="troca">
+                        <v-list-tile v-for="troca in trocaProcura" :key="troca.nome">
 
                             <v-list-tile-avatar>
                                 <v-icon>local_hospital</v-icon>
@@ -41,12 +41,14 @@
                             </v-list-tile-content>
                             
                             <v-list-tile-action>
-                                <v-badge overlap>
-                                    <span slot="badge">{{ troca.usuarios }}</span>
-                                    <v-icon color="grey lighten-1" large>
-                                        account_circle
-                                    </v-icon>
-                                </v-badge>
+                                <router-link to="troca-usuario">
+                                    <v-badge overlap>
+                                        <span slot="badge">{{ troca.usuarios }}</span>
+                                        <v-icon color="grey lighten-1" large>
+                                            account_circle
+                                        </v-icon>
+                                    </v-badge>
+                                </router-link>
                             </v-list-tile-action>
 
                         </v-list-tile>
@@ -63,7 +65,7 @@
                             Estou doando...
                         </v-subheader>
                         
-                        <v-list-tile v-for="troca in trocaDoando" :key="troca">
+                        <v-list-tile v-for="troca in trocaDoando" :key="troca.nome">
 
                             <v-list-tile-avatar>
                                 <v-icon>local_hospital</v-icon>
@@ -77,12 +79,14 @@
                             </v-list-tile-content>
                             
                             <v-list-tile-action>
-                                <v-badge overlap>
-                                    <span slot="badge">{{ troca.usuarios }}</span>
-                                    <v-icon color="grey lighten-1" large>
-                                        account_circle
-                                    </v-icon>
-                                </v-badge>
+                                <router-link to="troca-usuario">
+                                    <v-badge overlap>
+                                        <span slot="badge">{{ troca.usuarios }}</span>
+                                        <v-icon color="grey lighten-1" large>
+                                            account_circle
+                                        </v-icon>
+                                    </v-badge>
+                                </router-link>
                             </v-list-tile-action>
 
                         </v-list-tile>
@@ -184,9 +188,9 @@ export default {
         this.trocaDoando = this.$storage.get('troca_doando')
     },
     methods: {
-      goDashboard() {
-        this.$router.push('/dashboard')
-      }
+        goDashboard() {
+            this.$router.push('/dashboard')
+        }
     }
 }
 </script>
