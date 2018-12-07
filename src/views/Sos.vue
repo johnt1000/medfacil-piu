@@ -19,7 +19,7 @@
             <v-icon>star_border</v-icon>
         </v-tab>
 
-        <v-tab-item id="tab-1">
+        <v-tab-item value="tab-1">
 
                 <v-card>
                     <v-img
@@ -91,43 +91,36 @@
                 </v-card>
             </v-tab-item>
 
-            <v-tab-item id="tab-2">
-                <v-card>
-                    <v-list three-line>
-                        <template v-for="(item, index) in items">
-                            <v-subheader
-                            v-if="item.header"
-                            :key="item.header"
-                            >
-                            {{ item.header }}
-                            </v-subheader>
-
-                            <v-divider
-                            v-else-if="item.divider"
-                            :inset="item.inset"
-                            :key="index"
-                            ></v-divider>
-
-                            <v-list-tile
-                            v-else
-                            :key="item.title"
-                            avatar
-                            @click=""
-                            >
-                            <v-list-tile-avatar>
-                                <img :src="item.avatar">
-                            </v-list-tile-avatar>
+            <v-tab-item value="tab-2">
+                <v-card flat>
+                    <v-list two-line subheader>
+                            
+                        <v-subheader>
+                            Favoritos
+                        </v-subheader>
+                        
+                        <v-list-tile v-for="favorite in favorites" :key="favorite.name">
 
                             <v-list-tile-content>
-                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                                <v-list-tile-title>Nome: {{ favorite.name }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    {{ favorite.subtitle }}
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
-                            </v-list-tile>
-                        </template>
-                        </v-list>
-                    </v-card>
-            </v-tab-item>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
 
+                        </v-list-tile>
+
+                    </v-list>
+                </v-card>
+            </v-tab-item>
         </v-tabs>
 
         <v-btn
@@ -140,6 +133,57 @@
             >
               <v-icon>arrow_back</v-icon>
         </v-btn>
+
+        <v-dialog v-model="dialog" persistent max-width="600px">
+            <v-btn
+                slot="activator"
+              color="primary"
+              dark
+              fixed
+              bottom
+              right
+              fab
+            >
+                <v-icon>add</v-icon>
+            </v-btn>
+
+            <v-card>
+                <v-card-title>
+                    <span class="headline">Favorito</span>
+                </v-card-title>
+                
+                <v-card-text>
+                    <v-container grid-list-md>
+                        <v-layout wrap>
+                            <v-flex xs12 sm6>
+                                <v-text-field
+                                    label="Nome*"
+                                    required
+                                    v-model="name"
+                                    type="text"
+                                ></v-text-field>
+                            </v-flex>
+                            <v-flex xs12 sm6>
+                                <v-text-field
+                                    label="Descrição*"
+                                    required
+                                    v-model="subtitle"
+                                    type="text"
+                                ></v-text-field>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                    <small>* Campo obrigatório</small>
+                </v-card-text>
+                
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" flat @click="dialog = false">Fechar</v-btn>
+                    <v-btn color="blue darken-1" flat @click="addFavorito">Salvar</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </div>
 </template>
 
@@ -149,26 +193,27 @@ export default {
     name: 'sos',
     components: {},
     data () {
-      return this.$storage.get('favorites')
+        return {
+            dialog: false,
+            name: '',
+            subtitle: '',
+            favorites: []
+        }
     },
     created() {
-        this.$storage.set('favorites', [
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-            title: 'Dr. Jonata',
-            subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
-          },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-            title: 'Dr. João',
-            subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend."
-          },
-        ])
-
+        this.favorites = this.$storage.get('favorites')
     },
     methods: {
       goDashboard() {
         this.$router.push('/dashboard')
+        this.$storage.set('favorites', this.favorites)
+      },
+      addFavorito() {
+        this.dialog = false
+        this.favorites.push( {
+            name: this.name,
+            subtitle: this.subtitle
+        })
       }
     }
 }
