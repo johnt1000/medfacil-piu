@@ -4,6 +4,8 @@ import Login from './views/Login.vue'
 import Dashboard from './views/Dashboard.vue'
 import Troca from './views/Troca.vue'
 import TrocaUsuario from './views/TrocaUsuario.vue'
+import Sos from './views/Sos.vue'
+
 
 Vue.use(Router)
 
@@ -28,6 +30,11 @@ export default new Router({
       path: '/troca-usuario',
       name: 'troca-usuario',
       component: TrocaUsuario
+    },
+    {
+      path: '/sos',
+      name: 'sos',
+      component: Sos
     }
   ]
 })

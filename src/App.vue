@@ -78,6 +78,17 @@ export default {
         { nome: 'Ecalta', qtd: 1, tipo: "Líquido", usuarios: 1 }
       ]
     )
+
+    this.$storage.set('favorites', [
+      {
+        name: 'Dr. Jonata',
+        subtitle: 'Dentista da família'
+      },
+      {
+        name: 'Dr. João',
+        subtitle: 'Médico da família'
+      },
+    ])
     
     EventBus.$on('connected', payLoad => {
       this.connected = payLoad
