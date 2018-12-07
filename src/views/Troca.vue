@@ -20,59 +20,79 @@
             </v-tab>
 
             <v-tab-item id="tab-1">
-                <v-card>
-                    <v-list three-line>
-                        <template v-for="(item, index) in items">
-                            <v-subheader
-                            v-if="item.header"
-                            :key="item.header"
-                            >
-                            {{ item.header }}
-                            </v-subheader>
+                <v-card flat>
+                    <v-list two-line subheader>
 
-                            <v-divider
-                            v-else-if="item.divider"
-                            :inset="item.inset"
-                            :key="index"
-                            ></v-divider>
+                        <v-subheader>
+                            Estou procurando...
+                        </v-subheader>
+                        
+                        <v-list-tile v-for="troca in trocaProcura" :key="troca">
 
-                            <v-list-tile
-                            v-else
-                            :key="item.title"
-                            avatar
-                            @click=""
-                            >
                             <v-list-tile-avatar>
-                                <img :src="item.avatar">
+                                <v-icon>local_hospital</v-icon>
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
-                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                                <v-list-tile-title>Nome: {{ troca.nome }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    QTD: {{ troca.qtd }} Unidades ({{ troca.tipo }})
+                                </v-list-tile-sub-title>
                             </v-list-tile-content>
-                            </v-list-tile>
-                        </template>
-                        </v-list>
-                    </v-card>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">{{ troca.usuarios }}</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                    </v-list>
+                </v-card>
             </v-tab-item>
 
             <v-tab-item id="tab-2">
                 <v-card flat>
-                    <v-card-text>bbxxxbbssssbb</v-card-text>
+                    <v-list two-line subheader>
+                            
+                        <v-subheader>
+                            Estou doando...
+                        </v-subheader>
+                        
+                        <v-list-tile v-for="troca in trocaDoando" :key="troca">
+
+                            <v-list-tile-avatar>
+                                <v-icon>local_hospital</v-icon>
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title>Nome: {{ troca.nome }}</v-list-tile-title>
+                                <v-list-tile-sub-title>
+                                    QTD: {{ troca.qtd }} Unidades ({{ troca.tipo }})
+                                </v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">{{ troca.usuarios }}</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                    </v-list>
                 </v-card>
             </v-tab-item>
 
         </v-tabs>
-        <v-btn
-              color="primary"
-              dark
-              fixed
-              bottom
-              right
-              fab
-            >
-              <v-icon>add</v-icon>
-        </v-btn>
+        
         <v-btn
               color="white"
               fixed
@@ -83,6 +103,62 @@
             >
               <v-icon>arrow_back</v-icon>
         </v-btn>
+
+        <v-dialog v-model="dialog" persistent max-width="600px">
+            <v-btn
+                slot="activator"
+              color="primary"
+              dark
+              fixed
+              bottom
+              right
+              fab
+            >
+                <v-icon>add</v-icon>
+            </v-btn>
+
+            <v-card>
+                <v-card-title>
+                    <span class="headline">Procurando</span>
+                </v-card-title>
+                
+                <v-card-text>
+                    <v-container grid-list-md>
+                        <v-layout wrap>
+                            <v-flex xs12 sm6>
+                                <v-autocomplete
+                                :items="this.medicamentos"
+                                label="Medicamento*"
+                                required
+                                ></v-autocomplete>
+                            </v-flex>
+                            <v-flex xs12 sm6>
+                                <v-autocomplete
+                                :items="this.tiposMedicamentos"
+                                label="Tipo*"
+                                required
+                                ></v-autocomplete>
+                            </v-flex>
+                            <v-flex xs12 sm6>
+                                <v-text-field
+                                    label="Quantidade*"
+                                    required
+                                    type="number"
+                                ></v-text-field>
+                            </v-flex>
+                        </v-layout>
+                    </v-container>
+                    <small>* Campo obrigatório</small>
+                </v-card-text>
+                
+                <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn color="blue darken-1" flat @click="dialog = false">Fechar</v-btn>
+                    <v-btn color="blue darken-1" flat @click="dialog = false">Salvar</v-btn>
+                </v-card-actions>
+            </v-card>
+        </v-dialog>
+
     </div>
 </template>
 
@@ -92,43 +168,20 @@ export default {
     name: 'troca',
     components: {},
     data () {
-      return {
-        items: [
-          { header: 'Procurando' },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
-            title: 'Brunch this weekend?',
-            subtitle: "<span class='text--primary'>Ali Connors</span> &mdash; I'll be in your neighborhood doing errands this weekend. Do you want to hang out?"
-          },
-          { divider: true, inset: true },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/2.jpg',
-            title: 'Summer BBQ <span class="grey--text text--lighten-1">4</span>',
-            subtitle: "<span class='text--primary'>to Alex, Scott, Jennifer</span> &mdash; Wish I could come, but I'm out of town this weekend."
-          },
-          { divider: true, inset: true },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/3.jpg',
-            title: 'Oui oui',
-            subtitle: "<span class='text--primary'>Sandra Adams</span> &mdash; Do you have Paris recommendations? Have you ever been?"
-          },
-          { divider: true, inset: true },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/4.jpg',
-            title: 'Birthday gift',
-            subtitle: "<span class='text--primary'>Trevor Hansen</span> &mdash; Have any ideas about what we should get Heidi for her birthday?"
-          },
-          { divider: true, inset: true },
-          {
-            avatar: 'https://cdn.vuetifyjs.com/images/lists/5.jpg',
-            title: 'Recipe to try',
-            subtitle: "<span class='text--primary'>Britta Holt</span> &mdash; We should eat this: Grate, Squash, Corn, and tomatillo Tacos."
-          }
-        ]
-      }
+        return {
+            dialog: false,
+            items: [],
+            medicamentos: [],
+            tiposMedicamentos: [],
+            trocaProcura: [],
+            trocaDoando: []
+        }
     },
     created() {
-        
+        this.medicamentos = this.$storage.get('medicamentos')
+        this.tiposMedicamentos = this.$storage.get('tipos_medicamentos')
+        this.trocaProcura = this.$storage.get('troca_procura')
+        this.trocaDoando = this.$storage.get('troca_doando')
     },
     methods: {
       goDashboard() {

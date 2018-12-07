@@ -36,7 +36,7 @@ export default {
   }),
   methods: {
     login() {
-      const data = this.$storage.get('login');
+      const data = this.$storage.get('login')
       if(this.username == data.username && this.password == data.password) {
         this.$router.push('dashboard')
       } else {
