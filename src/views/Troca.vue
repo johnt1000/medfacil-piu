@@ -20,49 +20,123 @@
             </v-tab>
 
             <v-tab-item id="tab-1">
-                <v-card>
-                    <v-list three-line>
-                        <template v-for="(item, index) in items">
-                            <v-subheader
-                            v-if="item.header"
-                            :key="item.header"
-                            >
-                            {{ item.header }}
-                            </v-subheader>
+                <v-card flat>
+                    <v-list two-line subheader>
+                            
+                        <v-subheader>
+                            Estou procurando...
+                        </v-subheader>
+                        
+                        <v-list-tile>
 
-                            <v-divider
-                            v-else-if="item.divider"
-                            :inset="item.inset"
-                            :key="index"
-                            ></v-divider>
-
-                            <v-list-tile
-                            v-else
-                            :key="item.title"
-                            avatar
-                            @click=""
-                            >
                             <v-list-tile-avatar>
-                                <img :src="item.avatar">
+                                <v-icon>local_hospital</v-icon>
                             </v-list-tile-avatar>
 
                             <v-list-tile-content>
-                                <v-list-tile-title v-html="item.title"></v-list-tile-title>
-                                <v-list-tile-sub-title v-html="item.subtitle"></v-list-tile-sub-title>
+                                <v-list-tile-title>Nome: Viagra</v-list-tile-title>
+                                <v-list-tile-sub-title>Quantidade: 10 Unidades</v-list-tile-sub-title>
                             </v-list-tile-content>
-                            </v-list-tile>
-                        </template>
-                        </v-list>
-                    </v-card>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">0</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                        <v-divider></v-divider>
+
+                        <v-list-tile>
+
+                            <v-list-tile-avatar>
+                                <v-icon>local_hospital</v-icon>
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title>Nome: Aspirina</v-list-tile-title>
+                                <v-list-tile-sub-title>Quantidade: 2 Unidades</v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">3</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                    </v-list>
+                </v-card>
             </v-tab-item>
 
             <v-tab-item id="tab-2">
                 <v-card flat>
-                    <v-card-text>bbxxxbbssssbb</v-card-text>
+                    <v-list two-line subheader>
+                            
+                        <v-subheader>
+                            Estou doando...
+                        </v-subheader>
+                        
+                        <v-list-tile>
+
+                            <v-list-tile-avatar>
+                                <v-icon>local_hospital</v-icon>
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title>Nome: Viagra</v-list-tile-title>
+                                <v-list-tile-sub-title>Quantidade: 10 Unidades</v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">15</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                        <v-divider></v-divider>
+
+                        <v-list-tile>
+
+                            <v-list-tile-avatar>
+                                <v-icon>local_hospital</v-icon>
+                            </v-list-tile-avatar>
+
+                            <v-list-tile-content>
+                                <v-list-tile-title>Nome: Aspirina</v-list-tile-title>
+                                <v-list-tile-sub-title>Quantidade: 2 Unidades</v-list-tile-sub-title>
+                            </v-list-tile-content>
+                            
+                            <v-list-tile-action>
+                                <v-badge overlap>
+                                    <span slot="badge">7</span>
+                                    <v-icon color="grey lighten-1" large>
+                                        account_circle
+                                    </v-icon>
+                                </v-badge>
+                            </v-list-tile-action>
+
+                        </v-list-tile>
+
+                    </v-list>
                 </v-card>
             </v-tab-item>
 
         </v-tabs>
+        
         <v-btn
               color="primary"
               dark
@@ -73,6 +147,7 @@
             >
               <v-icon>add</v-icon>
         </v-btn>
+        
         <v-btn
               color="white"
               fixed
@@ -83,6 +158,9 @@
             >
               <v-icon>arrow_back</v-icon>
         </v-btn>
+
+    
+
     </div>
 </template>
 
