@@ -43,6 +43,33 @@ export default {
   },
   created() {
     this.$storage.set('login', { username: 'admin', password: '12345' })
+
+    this.$storage.set('medicamentos',
+      [
+        'Abraxane',
+        'Accolate',
+        'B-Platin',
+        'CPHD AC 45',
+        'Dacarbazina',
+        'Ecalta',
+        'Facyl M',
+        'Quadrinax',
+        'Ulceronyl'
+      ]
+    )
+    this.$storage.set('tipos_medicamentos',
+      [
+        'Cápsula',
+        'Líquido',
+      ]
+    )
+
+    this.$storage.set('troca_procura',
+      [
+        { nome: 'Abraxane', qtd: 10, usuarios: 10 },
+        { nome: 'Dacarbazina', qtd: 7, usuarios: 2 }
+      ]
+    )
     
     EventBus.$on('connected', payLoad => {
       this.connected = payLoad
