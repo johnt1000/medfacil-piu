@@ -16,7 +16,7 @@
         </v-card-title>
 
         <v-card-actions>
-          <v-btn flat>Trocas</v-btn>
+          <v-btn flat @click="list">Trocas</v-btn>
           <v-btn flat color="purple">Nova Troca</v-btn>
           <v-spacer></v-spacer>
           <v-btn icon @click="show = !show">
@@ -45,7 +45,12 @@
   export default {
     data: () => ({
       show: false
-    })
+    }),
+    methods: {
+      list() {
+        this.$router.push('/trocas')
+      }
+    }
   }
 </script>
 
