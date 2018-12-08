@@ -21,6 +21,8 @@
 
         <v-tab-item value="tab-1">
 
+                <br>
+
                 <v-card>
                     <v-img
                     src="https://www.acritica.com/uploads/news/image/752199/show_samu_C24ED948-0569-4586-87FB-B538B74A6F2E.JPG"
@@ -29,11 +31,14 @@
                     </v-img>
 
                     <v-card-title primary-title>
-                    <div>
-                        <v-btn flat class="headline">SAMU</v-btn>
-                    </div>
+                        <div>
+                            <v-btn flat class="headline">SAMU</v-btn>
+                        </div>
                     </v-card-title>
                 </v-card>
+                
+                <br>
+
                 <v-card>
                     <v-img
                     src="https://image.shutterstock.com/image-vector/medical-concept-panoramic-background-hospital-260nw-272488094.jpg"
@@ -42,11 +47,13 @@
                     </v-img>
 
                     <v-card-title primary-title>
-                    <div>
-                        <v-btn flat class="headline">Hospital</v-btn>
-                    </div>
+                        <div>
+                            <v-btn flat class="headline">Hospital</v-btn>
+                        </div>
                     </v-card-title>
                 </v-card>
+
+                <br>
 
                 <v-card>
                     <v-img
@@ -56,11 +63,13 @@
                     </v-img>
 
                     <v-card-title primary-title>
-                    <div>
-                        <v-btn flat class="headline">Médico</v-btn>
-                    </div>
+                        <div>
+                            <v-btn flat class="headline">Médico</v-btn>
+                        </div>
                     </v-card-title>
                 </v-card>
+
+                <br>
 
                 <v-card>
                     <v-img
@@ -70,11 +79,13 @@
                     </v-img>
 
                     <v-card-title primary-title>
-                    <div>
-                        <v-btn flat class="headline">Polícia</v-btn>
-                    </div>
+                        <div>
+                            <v-btn flat class="headline">Polícia</v-btn>
+                        </div>
                     </v-card-title>
                 </v-card>
+
+                <br>
 
                 <v-card>
                     <v-img
@@ -84,9 +95,9 @@
                     </v-img>
 
                     <v-card-title primary-title>
-                    <div>
-                        <v-btn flat class="headline">Bombeiro</v-btn>
-                    </div>
+                        <div>
+                            <v-btn flat class="headline">Bombeiro</v-btn>
+                        </div>
                     </v-card-title>
                 </v-card>
             </v-tab-item>
