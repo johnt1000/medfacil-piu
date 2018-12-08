@@ -71,7 +71,7 @@
                         </v-img>
 
                         <v-list two-line>
-                        <v-list-tile @click="">
+                        <v-list-tile>
                             <v-list-tile-action>
                             <v-icon color="indigo">phone</v-icon>
                             </v-list-tile-action>
