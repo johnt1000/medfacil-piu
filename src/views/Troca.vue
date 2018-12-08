@@ -134,6 +134,7 @@
                                 :items="this.medicamentos"
                                 label="Medicamento*"
                                 required
+                                v-model="medicamento.nome"
                                 ></v-autocomplete>
                             </v-flex>
                             <v-flex xs12 sm6>
@@ -141,12 +142,14 @@
                                 :items="this.tiposMedicamentos"
                                 label="Tipo*"
                                 required
+                                v-model="medicamento.tipo"
                                 ></v-autocomplete>
                             </v-flex>
                             <v-flex xs12 sm6>
                                 <v-text-field
                                     label="Quantidade*"
                                     required
+                                    v-model="medicamento.qtd"
                                     type="number"
                                 ></v-text-field>
                             </v-flex>
@@ -158,7 +161,7 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="blue darken-1" flat @click="dialog = false">Fechar</v-btn>
-                    <v-btn color="blue darken-1" flat @click="dialog = false">Salvar</v-btn>
+                    <v-btn color="blue darken-1" flat @click="add">Salvar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -174,11 +177,16 @@ export default {
     data () {
         return {
             dialog: false,
-            items: [],
             medicamentos: [],
             tiposMedicamentos: [],
             trocaProcura: [],
-            trocaDoando: []
+            trocaDoando: [],
+            medicamento: {
+                nome: null,
+                qtd: 0,
+                tipo: null,
+                usuarios: 0
+            }
         }
     },
     created() {
@@ -190,6 +198,11 @@ export default {
     methods: {
         goDashboard() {
             this.$router.push('/dashboard')
+        },
+        add() {
+            this.trocaProcura.push(this.medicamento)
+            this.$storage.set('troca_procura', this.trocaProcura)
+            this.dialog = false
         }
     }
 }
