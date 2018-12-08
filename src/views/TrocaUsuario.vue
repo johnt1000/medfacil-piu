@@ -8,7 +8,7 @@
                     Doadores
                 </v-subheader>
                 
-                <v-list-tile v-for="troca in trocaProcura" :key="troca.nome">
+                <v-list-tile v-for="troca in trocaDadores" :key="troca.nome">
 
                     <v-list-tile-avatar>
                         <v-icon large>account_circle</v-icon>
@@ -22,7 +22,7 @@
                     </v-list-tile-content>
                     
                     <v-list-tile-action>
-                        <v-icon color="grey" large @click="showDialog">
+                        <v-icon color="grey" large @click="showDialog(troca)">
                             remove_red_eye
                         </v-icon>
                     </v-list-tile-action>
@@ -44,54 +44,28 @@
               <v-icon>arrow_back</v-icon>
         </v-btn>
 
-        <v-dialog v-model="dialog" persistent max-width="600px">
-            <v-btn
-                slot="activator"
-              color="primary"
-              dark
-              fixed
-              bottom
-              right
-              fab
-            >
-                <v-icon>add</v-icon>
-            </v-btn>
-
-            <v-card>
-                <v-card-title>
-                    <span class="headline">Medicamento</span>
-                </v-card-title>
+        <v-dialog v-model="dialog" persistent>
+            <v-card flat>
                 
                 <v-card-text>
-                    <v-card>
+                    <v-card flat>
                         <v-img
                         src="https://cdn.vuetifyjs.com/images/lists/ali.png"
-                        height="300px"
+                        height="200px"
                         >
                         <v-layout
                             column
                             fill-height
                         >
                             <v-card-title>
-                            <v-btn dark icon>
-                                <v-icon>chevron_left</v-icon>
-                            </v-btn>
-
-                            <v-spacer></v-spacer>
-
-                            <v-btn dark icon class="mr-3">
-                                <v-icon>edit</v-icon>
-                            </v-btn>
-
-                            <v-btn dark icon>
-                                <v-icon>more_vert</v-icon>
-                            </v-btn>
+                                <v-spacer></v-spacer>
+                                <v-btn dark icon>
+                                    <v-icon>more_vert</v-icon>
+                                </v-btn>
                             </v-card-title>
 
-                            <v-spacer></v-spacer>
-
-                            <v-card-title class="white--text pl-5 pt-5">
-                            <div class="display-1 pl-5 pt-5">Ali Conners</div>
+                            <v-card-title class="white--text pl-4 pt-4">
+                                <div class="display-1 pl-5 pt-5">{{ doador.nome }}</div>
                             </v-card-title>
                         </v-layout>
                         </v-img>
@@ -103,8 +77,8 @@
                             </v-list-tile-action>
 
                             <v-list-tile-content>
-                                <v-list-tile-title>(650) 555-1234</v-list-tile-title>
-                                <v-list-tile-sub-title>Mobile</v-list-tile-sub-title>
+                                <v-list-tile-title>{{ doador.fone }}</v-list-tile-title>
+                                <v-list-tile-sub-title>Telefone</v-list-tile-sub-title>
                             </v-list-tile-content>
 
                             <v-list-tile-action>
@@ -114,20 +88,20 @@
 
                         <v-divider inset></v-divider>
 
-                        <v-list-tile @click="">
+                        <v-list-tile>
                             <v-list-tile-action>
                             <v-icon color="indigo">mail</v-icon>
                             </v-list-tile-action>
 
                             <v-list-tile-content>
-                            <v-list-tile-title>aliconnors@example.com</v-list-tile-title>
-                            <v-list-tile-sub-title>Personal</v-list-tile-sub-title>
+                            <v-list-tile-title>{{ doador.mail }}</v-list-tile-title>
+                            <v-list-tile-sub-title>E-mail</v-list-tile-sub-title>
                             </v-list-tile-content>
                         </v-list-tile>
 
                         <v-divider inset></v-divider>
 
-                        <v-list-tile @click="">
+                        <v-list-tile>
                             <v-list-tile-action>
                             <v-icon color="indigo">location_on</v-icon>
                             </v-list-tile-action>
@@ -144,7 +118,6 @@
                 <v-card-actions>
                     <v-spacer></v-spacer>
                     <v-btn color="blue darken-1" flat @click="dialog = false">Fechar</v-btn>
-                    <v-btn color="blue darken-1" flat @click="dialog = false">Salvar</v-btn>
                 </v-card-actions>
             </v-card>
         </v-dialog>
@@ -160,26 +133,24 @@ export default {
     data () {
         return {
             dialog: false,
-            items: [],
-            medicamentos: [],
-            tiposMedicamentos: [],
-            trocaProcura: [],
-            trocaDoando: [],
-            dialog: false
+            trocaDadores: [],
+            doador: {
+                nome: null,
+                qtd: 0,
+                tipo: null
+            }
         }
     },
     created() {
-        this.medicamentos = this.$storage.get('medicamentos')
-        this.tiposMedicamentos = this.$storage.get('tipos_medicamentos')
-        this.trocaProcura = this.$storage.get('troca_procura')
-        this.trocaDoando = this.$storage.get('troca_doando')
+        this.trocaDadores = this.$storage.get('troca_doadores')
     },
     methods: {
       voltar() {
         this.$router.push('/trocas')
       },
-      showDialog() {
+      showDialog(doador) {
           this.dialog = !this.dialog
+          this.doador = doador
       }
     }
 }

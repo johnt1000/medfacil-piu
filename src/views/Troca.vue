@@ -181,28 +181,29 @@ export default {
             tiposMedicamentos: [],
             trocaProcura: [],
             trocaDoando: [],
-            medicamento: {
-                nome: null,
-                qtd: 0,
-                tipo: null,
-                usuarios: 0
-            }
+            medicamento: {}
         }
     },
     created() {
-        this.medicamentos = this.$storage.get('medicamentos')
-        this.tiposMedicamentos = this.$storage.get('tipos_medicamentos')
-        this.trocaProcura = this.$storage.get('troca_procura')
-        this.trocaDoando = this.$storage.get('troca_doando')
+        this.loadingData()
     },
     methods: {
         goDashboard() {
             this.$router.push('/dashboard')
         },
         add() {
+            this.medicamento.usuarios = (Math.random() * (25 - 1) -1).toFixed()
             this.trocaProcura.push(this.medicamento)
             this.$storage.set('troca_procura', this.trocaProcura)
             this.dialog = false
+            this.medicamento = {}
+            this.loadingData()
+        },
+        loadingData() {
+            this.medicamentos = this.$storage.get('medicamentos')
+            this.tiposMedicamentos = this.$storage.get('tipos_medicamentos')
+            this.trocaProcura = this.$storage.get('troca_procura')
+            this.trocaDoando = this.$storage.get('troca_doando')
         }
     }
 }

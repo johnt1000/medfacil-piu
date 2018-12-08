@@ -71,6 +71,13 @@ export default {
       ]
     )
 
+    this.$storage.set('troca_doadores',
+      [
+        { nome: 'Sr. João', qtd: 10, tipo: "Cápsula", fone: '(84) 99333-2222', mail: 'jon@gmail.com' },
+        { nome: 'Sra. Maria', qtd: 7, tipo: "Cápsula", fone: '(84) 99333-0000', mail: 'mary@gmail.com' }
+      ]
+    )
+
     this.$storage.set('troca_doando',
       [
         { nome: 'Facyl M', qtd: 100, tipo: "Cápsula", usuarios: 1 },
